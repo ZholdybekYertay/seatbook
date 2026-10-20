@@ -1,0 +1,1 @@
+UI PASS: catalog, registration, reservation, confirmation, cancellation, admin event creation, mobile overflow, JS/CSP errors.

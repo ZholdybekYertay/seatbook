@@ -1,0 +1,24 @@
+name: seatbook-tests
+services:
+  test-db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: seatbook_test
+      POSTGRES_PASSWORD: test_only_password
+      POSTGRES_DB: seatbook_test
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U seatbook_test -d seatbook_test"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+  test:
+    image: golang:1.26
+    working_dir: /src
+    volumes:
+      - .:/src:ro
+    environment:
+      TEST_DATABASE_URL: postgres://seatbook_test:test_only_password@test-db:5432/seatbook_test?sslmode=disable
+    depends_on:
+      test-db:
+        condition: service_healthy
+    command: ["sh", "-c", "go test -race -count=1 ./... && go vet ./..."]

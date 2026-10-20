@@ -1,0 +1,65 @@
+?   	github.com/ZholdybekYertay/seatbook/cmd/api	[no test files]
+=== RUN   TestDefaults
+--- PASS: TestDefaults (0.00s)
+=== RUN   TestRejectInvalid
+=== RUN   TestRejectInvalid/JWT_SECRETshort
+=== RUN   TestRejectInvalid/DATABASE_URL
+=== RUN   TestRejectInvalid/ADMIN_EMAILbad
+=== RUN   TestRejectInvalid/ADMIN_PASSWORDshort
+=== RUN   TestRejectInvalid/HOLD_SECONDS0
+=== RUN   TestRejectInvalid/HOLD_SECONDS3601
+=== RUN   TestRejectInvalid/HOLD_SECONDSabc
+=== RUN   TestRejectInvalid/APP_ORIGINhttps://example.com/path
+=== RUN   TestRejectInvalid/APP_ORIGINhttps://example.com/
+=== RUN   TestRejectInvalid/APP_ORIGINftp://example.com
+=== RUN   TestRejectInvalid/COOKIE_SECUREyes
+--- PASS: TestRejectInvalid (0.00s)
+    --- PASS: TestRejectInvalid/JWT_SECRETshort (0.00s)
+    --- PASS: TestRejectInvalid/DATABASE_URL (0.00s)
+    --- PASS: TestRejectInvalid/ADMIN_EMAILbad (0.00s)
+    --- PASS: TestRejectInvalid/ADMIN_PASSWORDshort (0.00s)
+    --- PASS: TestRejectInvalid/HOLD_SECONDS0 (0.00s)
+    --- PASS: TestRejectInvalid/HOLD_SECONDS3601 (0.00s)
+    --- PASS: TestRejectInvalid/HOLD_SECONDSabc (0.00s)
+    --- PASS: TestRejectInvalid/APP_ORIGINhttps://example.com/path (0.00s)
+    --- PASS: TestRejectInvalid/APP_ORIGINhttps://example.com/ (0.00s)
+    --- PASS: TestRejectInvalid/APP_ORIGINftp://example.com (0.00s)
+    --- PASS: TestRejectInvalid/COOKIE_SECUREyes (0.00s)
+PASS
+ok  	github.com/ZholdybekYertay/seatbook/internal/config	1.014s
+=== RUN   TestRejectsUntrustedOrigins
+--- PASS: TestRejectsUntrustedOrigins (0.00s)
+=== RUN   TestRejectsBadTokens
+--- PASS: TestRejectsBadTokens (0.00s)
+=== RUN   TestStaticAssets
+--- PASS: TestStaticAssets (0.01s)
+=== RUN   TestLimiter
+--- PASS: TestLimiter (0.00s)
+=== RUN   TestCredentials
+--- PASS: TestCredentials (0.00s)
+=== RUN   TestIntegration
+=== RUN   TestIntegration/validation-and-authorization
+=== RUN   TestIntegration/20-requests-one-seat
+=== RUN   TestIntegration/idempotency-under-concurrency
+=== RUN   TestIntegration/expiry-and-rebooking
+=== RUN   TestIntegration/sweeper-vs-confirm-vs-rebook
+=== RUN   TestIntegration/admin-and-login
+=== RUN   TestIntegration/database-constraint
+--- PASS: TestIntegration (3.13s)
+    --- PASS: TestIntegration/validation-and-authorization (0.01s)
+    --- PASS: TestIntegration/20-requests-one-seat (0.07s)
+    --- PASS: TestIntegration/idempotency-under-concurrency (0.03s)
+    --- PASS: TestIntegration/expiry-and-rebooking (0.01s)
+    --- PASS: TestIntegration/sweeper-vs-confirm-vs-rebook (0.07s)
+    --- PASS: TestIntegration/admin-and-login (1.47s)
+    --- PASS: TestIntegration/database-constraint (0.00s)
+PASS
+ok  	github.com/ZholdybekYertay/seatbook/internal/httpapi	4.161s
+=== RUN   TestValidKey
+--- PASS: TestValidKey (0.00s)
+=== RUN   TestInvalidReserveDoesNotCallStore
+--- PASS: TestInvalidReserveDoesNotCallStore (0.00s)
+PASS
+ok  	github.com/ZholdybekYertay/seatbook/internal/service	1.012s
+?   	github.com/ZholdybekYertay/seatbook/internal/store	[no test files]
+?   	github.com/ZholdybekYertay/seatbook/web	[no test files]
